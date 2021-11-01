@@ -19,6 +19,6 @@ $router->get('/', function () use ($router) {
 
 $router->get('/random-images', [
 
-    'as' => 'r', 'uses' => 'Controller@index'
+    'as' => 'index', 'uses' => 'Controller@index'
     
     ]);
