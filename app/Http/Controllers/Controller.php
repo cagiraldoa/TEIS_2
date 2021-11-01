@@ -8,17 +8,35 @@ class Controller extends BaseController
 
 {
 
-public static $quotes = array("The Black Knight Always Triumphs! - Monty Python",
+public static $quotes = array("https://storage.googleapis.com/bucket-teis/Image-1.jpg",
 
-"Anyone who has never made a mistake has never tried anything new - Albert Einstein",
+"https://storage.googleapis.com/bucket-teis/Image-10.jpg",
 
-"Never Stop Exploring - The North Face",
+"https://storage.googleapis.com/bucket-teis/Image-11.png",
 
-"Be yourself; everyone else is already taken - Oscar Wilde",
+"https://storage.googleapis.com/bucket-teis/Image-12.jpg",
 
-"So many books, so little time - Frank Zappa",
+"https://storage.googleapis.com/bucket-teis/Image-13.jpg",
 
-"Be the change that you wish to see in the world - Mahatma Gandhi",
+"https://storage.googleapis.com/bucket-teis/Image-14.jpg",
+
+"https://storage.googleapis.com/bucket-teis/Image-15.jpg",
+
+"https://storage.googleapis.com/bucket-teis/Image-2.jpg",
+
+"https://storage.googleapis.com/bucket-teis/Image-3.jpg",
+
+"https://storage.googleapis.com/bucket-teis/Image-4.jpeg",
+
+"https://storage.googleapis.com/bucket-teis/Image-5.jpg",
+
+"https://storage.googleapis.com/bucket-teis/Image-6.jpg",
+
+"https://storage.googleapis.com/bucket-teis/Image-7.jpg",
+
+"https://storage.googleapis.com/bucket-teis/Image-8.png",
+
+"https://storage.googleapis.com/bucket-teis/Image-9.jpg",
 
 );
 
@@ -27,6 +45,6 @@ public function index()
     $totalQuotes = (count(Controller::$quotes));
     $randomNumber = (rand(0,($totalQuotes-1)));
     $randomQuote = Controller::$quotes[$randomNumber];
-    return response()->json(['quote' => $randomQuote, 'server_ip' => gethostbyname(gethostname())]);
+    return response("<img width=\"400px\" height=\"400px\" src=\"".$randomQuote."\" alt=\"\">\n<h1>SERVER_IP=>".gethostbyname(gethostname()));
 }
 }
